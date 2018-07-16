@@ -21,6 +21,6 @@ if [ -f composer.json ]; then
         dreadlabs/php-lib:7.0-dev \
         composer install --prefer-dist --optimize-autoloader --no-ansi --no-interaction
 else
-    echo "==> No composer.json found in root directory. Please run script/init."
+    echo "==> No composer.json found in root directory."
     exit 1
 fi
