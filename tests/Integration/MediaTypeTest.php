@@ -43,12 +43,26 @@ class MediaTypeTest extends TestCase
     /**
      * @test
      */
-    public function readme_example()
+    public function readme_usage_example_1()
     {
         $mediaType = new Application(RegistrationTree::personal(new HyphenedFromUpperCamelCased(new Exploded('\\'))));
         $withParameter = $mediaType->withParameter(new Parameter('version', '1.0'));
         $withSuffix = $withParameter->withSuffix(new Json());
 
         self::assertEquals('application/prs.acme.example.class+json; version=1.0', (string)$withSuffix->designated('Acme\\Example\\Class'));
+    }
+
+    /**
+     * @test
+     */
+    public function readme_usage_example_2()
+    {
+        $imaginaryClassName = 'Acme\\SalesApi\\Domain\\Event\\UserCreated';
+        $namespace = 'Acme\\SalesApi\\Domain\\Event';
+        $mediaType = new Application(RegistrationTree::vendor(new HyphenedFromUpperCamelCased(new Exploded('\\'))));
+
+        $designatedMediaType = $mediaType->designated(str_replace($namespace, 'SalesApi', $imaginaryClassName));
+
+        self::assertEquals('application/vnd.sales-api.user-created', (string)$designatedMediaType);
     }
 }
