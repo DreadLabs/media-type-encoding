@@ -10,6 +10,9 @@ denote a platform agnostic type literal.
 
 This library leans on the [RFC 6838](#rfc_6838) specification.
 
+It is a companion to [DreadLabs/media-type-decoding](https://github.com/DreadLabs/media-type-decoding),
+providing encoding of a [Media type](#def_media_type) string literal.
+
 ## Installation
 
     composer install dreadlabs/media-type-encoding:~1.0
