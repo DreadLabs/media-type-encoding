@@ -12,7 +12,7 @@ This library leans on the [RFC 6838](#rfc_6838) specification.
 
 ## Installation
 
-    composer install dreadlabs/mediatype-encoding:~1.0
+    composer install dreadlabs/media-type-encoding:~1.0
 
 ## Usage
 
